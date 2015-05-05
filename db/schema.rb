@@ -10,6 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 1) do
+
+  create_table "reviews", force: true do |t|
+    t.string "user_id"
+    t.text   "comment"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "venues", force: true do |t|
+    t.string   "venuename"
+    t.string   "address"
+    t.string   "website"
+    t.integer  "capacity"
+    t.decimal  "rental_cost"
+    t.boolean  "wifi"
+    t.boolean  "av"
+    t.boolean  "power_outlets"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
