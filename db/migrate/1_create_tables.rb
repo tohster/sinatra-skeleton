@@ -9,7 +9,7 @@ class CreateTables < ActiveRecord::Migration
     end
 
     create_table :venues do |t|
-      t.string :venuename
+      t.string :venue_name
       t.string :address
       t.string :website
       t.integer :capacity
@@ -22,8 +22,8 @@ class CreateTables < ActiveRecord::Migration
     end
 
     create_table :reviews do |t|
-      t.string :user_id
       t.text :comment
+      t.timestamps
     end
 
   end

@@ -10,11 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 1) do
+ActiveRecord::Schema.define(version: 2) do
 
   create_table "reviews", force: true do |t|
-    t.string "user_id"
-    t.text   "comment"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "venue_id"
+    t.integer  "user_id"
   end
 
   create_table "users", force: true do |t|
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 1) do
   end
 
   create_table "venues", force: true do |t|
-    t.string   "venuename"
+    t.string   "venue_name"
     t.string   "address"
     t.string   "website"
     t.integer  "capacity"
